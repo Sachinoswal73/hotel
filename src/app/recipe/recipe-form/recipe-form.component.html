@@ -1,0 +1,97 @@
+<h6>Recipe ( Add / Edit )</h6>
+
+<hr>
+
+<form [formGroup]="recForm" (ngSubmit)="onSubmit()">
+    <div class="form-row align-items-center mt-3 mb-4">
+      <div class="col-sm-12 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">N</div>
+          </div>
+          <input type="text" 
+              class="form-control" 
+              placeholder="Recipe Name" 
+              name = 'recName' 
+              formControlName="rName"
+              >
+        </div>
+        <span *ngIf="recForm.get('rName').pending">
+            <img src="https://media.tenor.com/zFvmGB-AX_gAAAAi/loading.gif" style="width:10px" alt="">
+         </span>
+         <!-- <span class="badge badge-danger"
+         *ngIf="recForm.get('rName').errors?.newRecName"
+         >
+         This Recipe name already exists.
+        </span> -->
+        <span class="badge badge-danger"
+        *ngIf="recForm.get('rName').errors?.nameExists && isNewRecipe"
+        >
+        This Recipe name already exists.
+        </span>
+        <span *ngIf="recForm.get('rName').touched">
+            <span class="badge badge-warning"
+                *ngIf="recForm.get('rName')?.errors?.required"
+                >
+                * This field needs to be filled.
+            </span>
+        </span>
+      </div>
+      
+      <div class="col-sm-12 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">P</div>
+          </div>
+          <input type="number" class="form-control" placeholder="Recipe Preparation Time" name="recPrep" formControlName="rPrep">
+        </div>
+        <span class="badge badge-warning"
+            *ngIf="recForm.get('rPrep').touched && recForm.get('rPrep').errors?.required"
+            >
+            * This field needs to be filled.
+        </span>
+      </div>
+      
+      <div class="col-sm-12 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">I</div>
+          </div>
+          <input type="text" class="form-control" placeholder="Recipe Image Path" name="recImgPath" formControlName="rImg">
+        </div>
+        <span class="badge badge-warning"
+                *ngIf="recForm.get('rImg').errors?.noSpace"
+            >
+            Please Don't leave any space in the url string.
+        </span>
+      </div>
+      
+      <div class="col-sm-12 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">D</div>
+          </div>
+          <textarea class="form-control"
+          name="recDesc"
+          formControlName="rDesc"
+          rows="3"
+          placeholder="Description Min Length is 10">
+          </textarea>
+        </div>
+        <span class="badge badge-warning"
+            *ngIf="recForm.get('rDesc').errors?.minlength"
+            >
+            Minimum length should be 10.
+        </span>
+      </div>
+      
+      <div class="col-sm-12 my-1">
+        <button type="submit" 
+            class="btn btn-primary btn-block" 
+            [disabled]="recForm.invalid || !recForm.touched"
+          > 
+            {{ isNewRecipe ? 'Add New Recipe' : 'Update the Recipe' }} 
+        </button>
+      </div>
+    </div>
+  </form>

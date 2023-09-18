@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand ml-2 border border-secondary p-2" href="#">Restaurant App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-4" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        
+        <!-- <a class="nav-link" (click)="navigateTo('recipe')">RECIPES <span class="sr-only">(current)</span></a>
+        <a class="nav-link" (click)="navigateTo('shopping')">SHOPPING</a> -->
+
+        <a routerLink="recipe" routerLinkActive="active" class="nav-link">RECIPES <span class="sr-only">(current)</span></a>
+        <a routerLink="shopping" routerLinkActive="active" class="nav-link">SHOPPING</a>
+
+      </div>
+    </div>
+  </nav>

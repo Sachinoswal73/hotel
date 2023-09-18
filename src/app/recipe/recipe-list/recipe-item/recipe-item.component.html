@@ -1,0 +1,19 @@
+<!-- <a href="#" (click)="passRecToList()" > -->
+<a [routerLink]="['details', selInd]">
+    <div class="card mb-3" >
+        <div class="row no-gutters">
+          
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ inputRec.name }}</h5>
+              <p class="card-text">{{ inputRec.desc }}</p>
+              <p class="card-text"><small class="text-muted">Preparation Time - {{ inputRec.preparationTime }} minutes</small></p>
+            </div>
+          </div>
+          <div class="col-md-4 divImg">
+            <img src="{{ inputRec.imgPath }}" alt="{{ inputRec.name }}" style="width:100%">
+          </div>
+    
+        </div>
+      </div>
+</a>

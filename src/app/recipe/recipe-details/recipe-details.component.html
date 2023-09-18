@@ -1,0 +1,24 @@
+<h6>Recipe Details</h6>
+
+<hr>
+
+<!-- <p>{{ fetchedRecipe | json }}</p> -->
+
+<div class="card">
+    <img src="{{ fetchedRecipe.imgPath }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card-title">{{ fetchedRecipe.name }}</h3>
+      <p class="card-text"> {{ fetchedRecipe.desc }}
+        <br>
+        <small class="text-muted">Preparation Time - {{ fetchedRecipe.preparationTime }} minutes</small>
+      </p>
+      <!-- <a href="#" class="btn btn-primary"> Know more</a> -->
+    </div>
+
+    <button class="btn btn-sm btn-block btn-secondary"
+      routerLink="edit"
+      >
+      Update this Recipe
+  </button>
+
+</div> 

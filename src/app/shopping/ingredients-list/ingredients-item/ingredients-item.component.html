@@ -1,0 +1,19 @@
+<div class="container m-4 p-2 border-bottom border-warning bg-light rounded-end">
+    <div class="row">
+        <div class="col-sm-1">
+            <img 
+            src="{{ receiveIngredient.imagePath }}" 
+            [alt]="receiveIngredient.imagePath"
+            class="w-100 rounded">
+        </div>
+        <div class="col-sm-8">
+            <h4>{{ receiveIngredient.name }}</h4>
+            <p>Quantity - {{ receiveIngredient.quantity }} units </p>
+           
+        </div>
+        <div class="col-sm-3">
+            <h6>Cost - {{ receiveIngredient.cost | currency:'INR' }}</h6>
+            <p class="">Brand - {{ receiveIngredient.brand }}</p>
+        </div>
+    </div>
+</div>

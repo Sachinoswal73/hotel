@@ -1,0 +1,85 @@
+<h6>Shopping form</h6>
+
+<form #form1="ngForm" (ngSubmit)="addNewIngredient()" id="form1">
+    <div class="form-row align-items-center mt-3 mb-4">
+      <div class="col-sm-4 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">N</div>
+          </div>
+          <input type="text" 
+              class="form-control" 
+              placeholder="Ingredient Name" 
+              ngModel
+              #ingName="ngModel"
+              name = 'ingName' 
+              required 
+              >
+        </div>
+        <span class="badge badge-danger"
+          *ngIf="ingName.touched && !ingName.valid"
+          >
+          This field needs to be filled.
+        </span>
+      </div>
+      <div class="col-sm-4 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">B</div>
+          </div>
+          <input type="text" class="form-control" placeholder="Ingredient Brand" 
+          #ingBrand
+          ngModel
+          name = 'ingBrand'>
+        </div>
+      </div>
+      <div class="col-sm-4 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Q</div>
+          </div>
+          <input type="text" class="form-control" placeholder="Ingredient Quantity" 
+          required 
+          name="ingQuantity"
+          ngModel
+          #ingQuantity>
+        </div>
+      </div>
+      <div class="col-sm-4 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">P</div>
+          </div>
+          <input type="text" class="form-control" placeholder="Ingredient Price"
+          required
+          name="ingCost" 
+          ngModel
+          #ingCost>
+        </div>
+      </div>
+      <div class="col-sm-4 my-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">I</div>
+          </div>
+          <input type="text" class="form-control" placeholder="Ingredient Image" 
+          name="ingImagePath"
+          ngModel
+          #ingImagePath
+          >
+        </div>
+      </div>
+      <div class="col-auto my-1">
+        <!-- <button type="submit" 
+          class="btn btn-primary" 
+          (click)="addNewIngredient(); 
+          form1.reset()"
+          [disabled]="form1.invalid"
+        >Submit</button> -->
+        <button type="submit" 
+        class="btn btn-primary" 
+        [disabled]="form1.invalid"
+      >Submit</button>
+      </div>
+    </div>
+  </form>

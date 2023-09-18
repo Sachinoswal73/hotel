@@ -1,0 +1,39 @@
+
+<h4>Recipes</h4>
+
+<hr>
+
+<div class="row">
+    
+    <div class="col-sm-6">
+        <!-- <app-recipe-list (outputRec)="getRecToParent($event)" ></app-recipe-list> -->
+        <!-- <app-recipe-list (outputRec)="receivedRecipe = $event" ></app-recipe-list> -->
+
+        <app-recipe-list></app-recipe-list>
+
+    </div>
+
+
+    <div class="col-sm-6">
+        
+        <router-outlet></router-outlet>
+
+        <!--         
+        <app-recipe-details
+        [fetchedRecipe]="receivedRecipe" 
+        *ngIf="receivedRecipe; else noReceivedRecipe"
+        >
+        </app-recipe-details>
+
+        <ng-template #noReceivedRecipe>
+            
+            <h6>Recipe Details</h6>
+
+            <hr>
+            
+            <h5> <i class="fa fa-solid fa-arrow-left"></i> Kindly select a Recipe to check the details.  </h5>
+        </ng-template> -->
+    
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+<h6>Recipe List</h6>
+
+<hr>
+
+<button class="btn btn-sm btn-block btn-secondary"
+    routerLink="addNew"
+    >
+    Add a new Recipe
+</button>
+
+<hr>
+
+<!-- <p> {{ recipesArray | json }} </p> -->
+
+<!-- <app-recipe-item *ngFor="let recipe of recipesArray" [inputRec]="recipe" (outputRec)="passRecToParent($event)" ></app-recipe-item> -->
+
+<!-- <app-recipe-item *ngFor="let recipe of recipesArray" [inputRec]="recipe" (outputRec)="passRecToParent(recipe)" ></app-recipe-item> -->
+
+<app-recipe-item *ngFor="let recipe of recipesArray, let i = index" [inputRec]="recipe" [selInd]="i" ></app-recipe-item>
+
+  
+
+<!-- <app-recipe-item></app-recipe-item> -->
